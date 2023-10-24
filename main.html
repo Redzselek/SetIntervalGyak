@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakorlas</title>
+    <style>
+        h1{
+            font-size: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 onclick="Sebesseg()" id="betu">A</h1>
+</body>
+</html>
+
+<script>
+    var seb = 500
+    var kattintott = false
+    var a = null
+    function Sebesseg() {
+        if (kattintott == false) {
+                seb = 2000
+                kattintott = true
+            }
+        else{
+                kattintott = false
+                seb = 500
+            }
+        clearInterval(a);
+        Valt();
+        }
+    
+    function Valt() {
+        a = setInterval(() => {
+            if ( document.getElementById("betu").innerText == "B") {
+                document.getElementById("betu").innerText = "A"
+            }
+            else
+            {
+                document.getElementById("betu").innerText = "B"
+            }
+        }, seb);
+    }
+    
+Valt()
+
+
+
+
+
+
+
+
+</script>
